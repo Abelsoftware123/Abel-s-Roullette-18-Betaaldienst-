@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abel's Roulette</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="roulette-app">
+        <header class="app-header">
+            <h1>🎰 Abel's Roulette</h1>
+            <div class="meta-info">
+                <div>Saldo: <strong id="balance">€10000</strong></div>
+                <div>Inzet: <strong id="pot">€0</strong></div>
+            </div>
+        </header>
+
+        <section class="game-area">
+            <div class="wheel-section">
+                <div class="wheel-container">
+                    <canvas id="roulette-wheel" width="450" height="450" aria-label="Roulettewiel"></canvas>
+                    <div class="wheel-pointer">▼</div>
+                </div>
+
+                <div class="game-controls">
+                    <div class="last-result-display">Laatste getal: <span id="last-result">--</span></div>
+                    <button id="spin-btn" class="btn primary">Spin</button>
+                    <button id="clear-btn" class="btn">Wis inzetten</button>
+                    <button id="reset-btn">Reset Saldo</button>
+                </div>
+            </div>
+
+            <aside class="bet-section">
+                <h2>Inzetten</h2>
+                <div class="bet-input-group">
+                    <label for="stake-input">Inzet per chip (€):</label>
+                    <input id="stake-input" type="number" min="1" max="100" step="1" value="10">
+                </div>
+
+                <div class="bet-board" id="bet-grid">
+                    </div>
+
+                <div class="special-bets">
+                    <button class="btn bet-option red" data-bet="red">Rood</button>
+                    <button class="btn bet-option black" data-bet="black">Zwart</button>
+                    <button class="btn bet-option even" data-bet="even">Even</button>
+                    <button class="btn bet-option odd" data-bet="odd">Oneven</button>
+                    <button class="btn bet-option low" data-bet="low">1-18</button>
+                    <button class="btn bet-option high" data-bet="high">19-36</button>
+                    <button class="btn bet-option dozen" data-bet="1st-12">1e 12</button>
+                    <button class="btn bet-option dozen" data-bet="2nd-12">2e 12</button>
+                    <button class="btn bet-option dozen" data-bet="3rd-12">3e 12</button>
+                </div>
+            </aside>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
